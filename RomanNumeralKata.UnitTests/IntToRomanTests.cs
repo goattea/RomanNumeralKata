@@ -23,11 +23,10 @@ namespace RomanNumeralKata.UnitTests
 		}
 
 
-		[Test, Category("Unit"), ExpectedException(typeof(InvalidDataException))]
+		[Test, Category("Unit")]
 		public void NumberAbove300ThrowsException()
 		{
-			ConvertNumberToRoman(3001);
-			Assert.IsTrue(false);
+			Assert.Throws<InvalidDataException>(() => ConvertNumberToRoman(3001));
 		}
 
 		private string ConvertNumberToRoman(int num)
